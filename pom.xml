@@ -145,14 +145,4 @@
         </resources>
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>mindasset-releases</id>
-            <url>http://nexus.mindasset.com/nexus/content/repositories/mindasset-releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>mindasset-snapshots</id>
-            <url>http://nexus.mindasset.com/nexus/content/repositories/mindasset-snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>
