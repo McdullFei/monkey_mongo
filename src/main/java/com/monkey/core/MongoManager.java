@@ -9,12 +9,12 @@ import com.mongodb.client.MongoDatabase;
  *
  * mongo工具类,基于3.3.0驱动封装
  */
-public class MongoMananger {
+public class MongoManager {
     private final MongoClient client;
     private final MongoConfig config;
 
 
-    public MongoMananger(MongoConfig config){
+    public MongoManager(MongoConfig config){
         MongoClientURI uri = new MongoClientURI(config.getBuildUri());
         this.client = new MongoClient(uri);
         this.config = config;

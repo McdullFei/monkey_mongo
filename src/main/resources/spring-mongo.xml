@@ -15,7 +15,7 @@
         <property name="password" value="${mongo.password}"></property>
         <property name="maxPoolSize" value="${mongo.maxpoolsize}"></property>
     </bean>
-    <bean id = "mongoMananger" class="com.monkey.core.MongoMananger" >
+    <bean id = "mongoMananger" class="com.monkey.core.MongoManager" >
         <constructor-arg ref="mongoConfig"></constructor-arg>
     </bean>
 
