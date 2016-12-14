@@ -1,4 +1,3 @@
-com/monkey/core/MongoMananger.class
 com/monkey/utils/CamelCaseFilter.class
 com/monkey/utils/ObjectIdsValidator.class
 com/monkey/utils/ObjectIdValidator.class
@@ -10,4 +9,5 @@ com/monkey/core/AbstractMongoDao.class
 com/monkey/utils/BeanUtil.class
 com/monkey/annotation/MongoId.class
 com/monkey/core/MongoConfig.class
+com/monkey/core/MongoManager.class
 com/monkey/annotation/MongoIds.class
