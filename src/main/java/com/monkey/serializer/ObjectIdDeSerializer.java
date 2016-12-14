@@ -9,8 +9,8 @@ import org.bson.types.ObjectId;
 import java.lang.reflect.Type;
 
 /**
- * Created by Dong Wang.
- * Created on 15/1/20 16:03
+ * Created by renfei
+ *
  */
 public class ObjectIdDeSerializer implements ObjectDeserializer {
     @Override

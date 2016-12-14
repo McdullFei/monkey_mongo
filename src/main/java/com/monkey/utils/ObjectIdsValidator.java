@@ -8,8 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.List;
 
 /**
- * Created by Dong Wang.
- * Created on 15/4/10 14:29
+ * Created by renfei
  */
 public class ObjectIdsValidator implements ConstraintValidator<MongoIds, List<String>> {
     private boolean canNull;
