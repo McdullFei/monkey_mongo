@@ -18,3 +18,4 @@ mongo 3.3驱动封装
 - 如何与logback集成？
 - 进行集群的测试（driver中支持多host的配置，需测试）
 - 如何检测mongo server的可用（在MongoManager中实现）
+- 集成JMX
