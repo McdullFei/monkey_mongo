@@ -32,14 +32,14 @@ import java.util.stream.Collectors;
  * the bean util for cover bean to DBObject or JSONObject
  * and cover back
  */
-public interface BeanUtil {
+public class BeanUtil {
 
-    Logger log = org.apache.log4j.Logger.getLogger(BeanUtil.class);
+    public static Logger log = org.apache.log4j.Logger.getLogger(BeanUtil.class);
 
     //the factory for validator
-    ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+    public static ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
 
-    SerializerFeature[] CONFIG = new SerializerFeature[]{
+    public static SerializerFeature[] CONFIG = new SerializerFeature[]{
             SerializerFeature.WriteNullBooleanAsFalse,//boolean为null时输出false
             SerializerFeature.WriteMapNullValue, //输出空置的字段
             SerializerFeature.WriteNonStringKeyAsString,//如果key不为String 则转换为String 比如Map的key为Integer
@@ -47,7 +47,7 @@ public interface BeanUtil {
             SerializerFeature.WriteNullNumberAsZero,//number为null时输出0
             SerializerFeature.WriteNullStringAsEmpty//String为null时输出""
     };
-    SerializerFeature[] CONFIG_USECLASSNAME = new SerializerFeature[]{
+    public static SerializerFeature[] CONFIG_USECLASSNAME = new SerializerFeature[]{
             SerializerFeature.WriteNullBooleanAsFalse,//boolean为null时输出false
             SerializerFeature.WriteMapNullValue, //输出空置的字段
             SerializerFeature.WriteNonStringKeyAsString,//如果key不为String 则转换为String 比如Map的key为Integer
@@ -56,16 +56,16 @@ public interface BeanUtil {
             SerializerFeature.WriteNullStringAsEmpty,//String为null时输出""
             SerializerFeature.WriteClassName//输出class的名称
     };
-    SerializeConfig SERIALIZECONFIG = initObjectIdSerializerConfig();
+    public static SerializeConfig SERIALIZECONFIG = initObjectIdSerializerConfig();
 
-    String _ID = "_id";
-    String OBJECT_ID = "objectId";
-    String GET_OBJECT_ID_METHOD_NAME = "getObjectId";
+    public static String _ID = "_id";
+    public static String OBJECT_ID = "objectId";
+    public static String GET_OBJECT_ID_METHOD_NAME = "getObjectId";
 
     /**
      * FastJSON无法序列化MongoDB的ObjectId，需要此自定义序列化类
      */
-    static SerializeConfig initObjectIdSerializerConfig() {
+    public static SerializeConfig initObjectIdSerializerConfig() {
         SerializeConfig serializeConfig = new SerializeConfig();
         serializeConfig.put(ObjectId.class, new ObjectIdSerializer());
         ParserConfig.getGlobalInstance().putDeserializer(ObjectId.class, new ObjectIdDeSerializer());
@@ -78,7 +78,7 @@ public interface BeanUtil {
      * if true the json text will contains the bean's class name
      * it is use for return back to bean
      */
-    static String objectToJsonString(Object object, boolean useClassName) {
+    public static String objectToJsonString(Object object, boolean useClassName) {
         String jsonText;
         if (useClassName) {
             jsonText = JSONObject.toJSONString(object, SERIALIZECONFIG, CONFIG_USECLASSNAME);
@@ -91,7 +91,7 @@ public interface BeanUtil {
     /**
      * parse one bean to json text, and this json contains all the bean's fields whatever is null or empty
      */
-    static String objectToJsonString(Object object) {
+    public static String objectToJsonString(Object object) {
         return JSONObject.toJSONString(object, SERIALIZECONFIG, CONFIG);
     }
 
@@ -104,7 +104,7 @@ public interface BeanUtil {
      * @since jdk 1.8
      */
     @Deprecated
-    static <T> List<T> dbObjectToList(BasicDBList basicDBList, Class<T> clazz) {
+    public static <T> List<T> dbObjectToList(BasicDBList basicDBList, Class<T> clazz) {
         List<T> result = new ArrayList<>();
 
         //Collection stream & lambda  jack.d.monkey
@@ -130,7 +130,7 @@ public interface BeanUtil {
      * clazz :
      * the bean's class type
      */
-    static <T> T dbObjectToBean(DBObject dbObject, Class<T> clazz) {
+    public static <T> T dbObjectToBean(DBObject dbObject, Class<T> clazz) {
         T result = null;
         if (dbObject != null) {
             turnKeyFrom_idToObjectId(dbObject);
@@ -148,7 +148,7 @@ public interface BeanUtil {
      * @param <T>
      * @return
      */
-    static <T> T documentToBean(Document document, Class<T> clazz) {
+    public static <T> T documentToBean(Document document, Class<T> clazz) {
         T result = null;
         if (document != null) {
             turnKeyFrom_idToObjectId(document);
@@ -162,7 +162,7 @@ public interface BeanUtil {
     /**
      * 将DBObject中的_id属性名变更为objectId
      */
-    static void turnKeyFrom_idToObjectId(DBObject dbObject) {
+    public static void turnKeyFrom_idToObjectId(DBObject dbObject) {
         if (dbObject.containsField(_ID)) {
             Object value = dbObject.removeField(_ID);
             dbObject.put(OBJECT_ID, value);
@@ -172,7 +172,7 @@ public interface BeanUtil {
     /**
      * 将Document中的_id属性名变更为objectId
      */
-    static void turnKeyFrom_idToObjectId(Document document) {
+    public static void turnKeyFrom_idToObjectId(Document document) {
         if (document.containsKey(_ID)) {
             Object value = document.get(_ID);
             document.put(OBJECT_ID, value);
@@ -182,7 +182,7 @@ public interface BeanUtil {
     /**
      * 将JSONObject中的objectId属性名变更为_id，并且类型为ObjectId
      */
-    static void turnKeyFromObjectIdTo_id(JSONObject jsonObject, Object bean) {
+    public static void turnKeyFromObjectIdTo_id(JSONObject jsonObject, Object bean) {
         if (jsonObject.containsKey(OBJECT_ID)) {
             jsonObject.remove(OBJECT_ID);
 
@@ -207,7 +207,7 @@ public interface BeanUtil {
      * @param bean
      * @return
      */
-    static Document beanToDocument(Object bean) {
+    public static Document beanToDocument(Object bean) {
         Document document = null;
         if (isValidBean(bean)) {
 
@@ -227,7 +227,7 @@ public interface BeanUtil {
      * @param bean
      * @return
      */
-    static DBObject beanToDBObject(Object bean) {
+    public static DBObject beanToDBObject(Object bean) {
         DBObject object = null;
         if (isValidBean(bean)) {
 
@@ -246,7 +246,7 @@ public interface BeanUtil {
      * check bean is valid object
      * the Bean Validation
      */
-    static boolean isValidBean(Object bean) {
+    public static boolean isValidBean(Object bean) {
         Validator validator = validatorFactory.getValidator();
         Collection<ConstraintViolation<Object>> errorList = validator.validate(bean);
 
@@ -260,10 +260,4 @@ public interface BeanUtil {
         return true;
     }
 
-    /**
-     * list 转换为可序列化的 BasicDBList
-     */
-    static BasicDBList listToBasicDBList(List<?> list) {
-        return list.stream().map(BeanUtil::beanToDBObject).collect(Collectors.toCollection(BasicDBList::new));
-    }
 }

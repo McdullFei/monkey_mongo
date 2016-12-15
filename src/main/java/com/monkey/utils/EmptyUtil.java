@@ -8,117 +8,117 @@ import java.util.Map;
  *
  * 空值验证工具类
  */
-public interface EmptyUtil {
+public class EmptyUtil {
 
     /**
      * charge String symbol is null or empty value ""
      */
-    static boolean isNullOrEmpty(String str) {
+    public static boolean isNullOrEmpty(String str) {
         return str == null || str.isEmpty();
     }
 
     /**
      * charge number object is null or zero
      */
-    static boolean isNullOrZero(Integer num) {
+    public static boolean isNullOrZero(Integer num) {
         return num == null || num == 0;
     }
 
     /**
      * charge number object is null or zero
      */
-    static boolean isNullOrZero(Long num) {
+    public static boolean isNullOrZero(Long num) {
         return num == null || num == 0;
     }
 
     /**
      * charge number object is null or zero
      */
-    static boolean isNullOrZero(Double num) {
+    public static boolean isNullOrZero(Double num) {
         return num == null || num == 0;
     }
 
     /**
      * charge number object is null or zero
      */
-    static boolean isNullOrZero(Float num) {
+    public static boolean isNullOrZero(Float num) {
         return num == null || num == 0;
     }
 
     /**
      * charge number object is null or zero
      */
-    static boolean isNullOrZero(Short num) {
+    public static boolean isNullOrZero(Short num) {
         return num == null || num == 0;
     }
 
     /**
      * charge number object is null or zero
      */
-    static boolean isNullOrZero(Byte num) {
+    public static boolean isNullOrZero(Byte num) {
         return num == null || num == 0;
     }
 
     /**
      * charge object array is null or length is zero
      */
-    static boolean isNullOrEmpty(Object[] byteArray) {
+    public static boolean isNullOrEmpty(Object[] byteArray) {
         return byteArray == null || byteArray.length == 0;
     }
 
     /**
      * charge int array is null or length is zero
      */
-    static boolean isNullOrEmpty(int[] byteArray) {
+    public static boolean isNullOrEmpty(int[] byteArray) {
         return byteArray == null || byteArray.length == 0;
     }
 
     /**
      * charge long array is null or length is zero
      */
-    static boolean isNullOrEmpty(long[] byteArray) {
+    public static boolean isNullOrEmpty(long[] byteArray) {
         return byteArray == null || byteArray.length == 0;
     }
 
     /**
      * charge double array is null or length is zero
      */
-    static boolean isNullOrEmpty(double[] byteArray) {
+    public static boolean isNullOrEmpty(double[] byteArray) {
         return byteArray == null || byteArray.length == 0;
     }
 
     /**
      * charge float array is null or length is zero
      */
-    static boolean isNullOrEmpty(float[] byteArray) {
+    public static boolean isNullOrEmpty(float[] byteArray) {
         return byteArray == null || byteArray.length == 0;
     }
 
     /**
      * charge short array is null or length is zero
      */
-    static boolean isNullOrEmpty(short[] byteArray) {
+    public static boolean isNullOrEmpty(short[] byteArray) {
         return byteArray == null || byteArray.length == 0;
     }
 
     /**
      * charge byte array is null or length is zero
      */
-    static boolean isNullOrEmpty(byte[] byteArray) {
+    public static boolean isNullOrEmpty(byte[] byteArray) {
         return byteArray == null || byteArray.length == 0;
     }
 
     /**
      * charge collection object is null or size is zero
      */
-    static boolean isNullOrEmpty(Collection<?> collection) {
+    public static boolean isNullOrEmpty(Collection<?> collection) {
         return collection == null || collection.size() == 0;
     }
 
     /**
      * charge map is null or size is zero
      */
-    static boolean isNullOrEmpty(Map<?, ?> map) {
+    public static boolean isNullOrEmpty(Map<?, ?> map) {
         return map == null || map.size() == 0;
     }
 }
