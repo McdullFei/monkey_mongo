@@ -111,4 +111,8 @@ interface MongoDao<T> {
     List<T> findListByFieldValueForPage(String queryField, Object queryValue, Class<? extends T> clazz, int page, int pageSize, Object... sort);
 
     List<T> findListByParamMapForPage(Map queryParam, Class<? extends T> clazz, int page, int pageSize, Object... sort);
+
+    List<T> findList(Bson query, Class<? extends T> clazz, int limit, Object... sort);
+
+    List<T> findListByPage(Bson query, Class<? extends T> clazz, int page, int pageSize, Object... sort);
 }

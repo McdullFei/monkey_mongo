@@ -333,7 +333,8 @@ public abstract class AbstractMongoDao<T> implements MongoDao<T> {
         return result;
     }
 
-    private List<T> findList(Bson query, Class<? extends T> clazz, int limit, Object... sort){
+    @Override
+    public List<T> findList(Bson query, Class<? extends T> clazz, int limit, Object... sort){
         List<T> result = new ArrayList<>();
         MongoCollection collection = getDaoCollection();
 
@@ -362,7 +363,8 @@ public abstract class AbstractMongoDao<T> implements MongoDao<T> {
         return result;
     }
 
-    private List<T> findListByPage(Bson query, Class<? extends T> clazz, int page, int pageSize, Object... sort){
+    @Override
+    public List<T> findListByPage(Bson query, Class<? extends T> clazz, int page, int pageSize, Object... sort){
         List<T> result = new ArrayList<>();
         MongoCollection collection = getDaoCollection();
 
