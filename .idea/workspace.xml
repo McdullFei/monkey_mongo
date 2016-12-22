@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88d491cc-7943-4a25-be33-f620e578c521" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mongodb.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/spring-mongo.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/monkey-1.1.0-sources.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/monkey-1.1.0.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/monkey/core/AbstractMongoDao.class" afterPath="$PROJECT_DIR$/target/classes/com/monkey/core/AbstractMongoDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/monkey/core/MongoDao.class" afterPath="$PROJECT_DIR$/target/classes/com/monkey/core/MongoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/monkey/core/MongoConfig.class" afterPath="$PROJECT_DIR$/target/classes/com/monkey/core/MongoConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/monkey/core/MongoManager.class" afterPath="$PROJECT_DIR$/target/classes/com/monkey/core/MongoManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/monkey-sources.jar" afterPath="$PROJECT_DIR$/target/monkey-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/monkey.jar" afterPath="$PROJECT_DIR$/target/monkey.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monkey.iml" afterPath="$PROJECT_DIR$/monkey.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/monkey/core/MongoConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/monkey/core/MongoConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/monkey/core/MongoManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/monkey/core/MongoManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring-mongo.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring-mongo.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="monkey.iws" />
@@ -96,8 +88,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20477815">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.82081914">
+              <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -996,12 +988,12 @@
       <workItem from="1481770203049" duration="1931000" />
       <workItem from="1482311154304" duration="2778000" />
       <workItem from="1482318852239" duration="507000" />
-      <workItem from="1482402528542" duration="3429000" />
+      <workItem from="1482402528542" duration="4094000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14989000" />
+    <option name="totallyTimeSpent" value="15654000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="730" extended-state="6" />
@@ -1464,8 +1456,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20477815">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.82081914">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
           <folding />
         </state>
       </provider>
