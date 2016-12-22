@@ -15,7 +15,8 @@ mongo 3.3驱动封装
 - client端只需要实现AbstractMongoDao即可(里面封装了常用的CRUD操作)
 
 # TODO
-- 如何与logback集成？
 - 进行集群的测试（driver中支持多host的配置，需测试）
 - 如何检测mongo server的可用（在MongoManager中实现）
 - 集成JMX
+
+# 废弃代码中的java bean映射方式集成morphia
