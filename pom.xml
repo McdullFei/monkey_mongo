@@ -6,7 +6,7 @@
 
     <groupId>d.mongo</groupId>
     <artifactId>monkey</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
 
     <properties>
         <spring.version>4.2.7.RELEASE</spring.version>
@@ -19,6 +19,12 @@
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
             <version>3.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mongodb.morphia</groupId>
+            <artifactId>morphia</artifactId>
+            <version>1.3.0</version>
         </dependency>
 
         <dependency>
@@ -128,13 +134,25 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                    <include>**/*.txt</include>
-                    <include>**/*.xml</include>
-                </includes>
+                <excludes>
+                    <exclude>**/*.properties</exclude>
+                    <exclude>**/*.txt</exclude>
+                </excludes>
             </resource>
         </resources>
     </build>
+
+    <distributionManagement>
+
+        <snapshotRepository>
+            <id>mindasset-snapshots</id>
+            <url>http://nexus.mindasset.com/nexus/content/repositories/mindasset-snapshots</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>mindasset-releases</id>
+            <url>http://nexus.mindasset.com/nexus/content/repositories/mindasset-releases</url>
+        </repository>
+    </distributionManagement>
 
 </project>

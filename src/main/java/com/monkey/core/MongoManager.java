@@ -3,6 +3,9 @@ package com.monkey.core;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
+import org.mongodb.morphia.Datastore;
+import org.mongodb.morphia.Morphia;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by renfei on 16/12/12.
@@ -12,12 +15,15 @@ import com.mongodb.client.MongoDatabase;
 public class MongoManager {
     private final MongoClient client;
     private final MongoConfig config;
+    private final Datastore datastore;
 
 
-    public MongoManager(MongoConfig config){
+    public MongoManager(MongoConfig config, Morphia morphia){
         MongoClientURI uri = new MongoClientURI(config.getBuildUri());
         this.client = new MongoClient(uri);
         this.config = config;
+        morphia.mapPackage(config.getInstPath());//注解扫描路径
+        this.datastore = morphia.createDatastore(client, config.getDatabase());
     }
 
     public MongoClient getClient() {
@@ -26,5 +32,9 @@ public class MongoManager {
 
     public MongoDatabase getDatabase(){
         return client.getDatabase(config.getDatabase());
+    }
+
+    public Datastore getDatastore(){
+        return this.datastore;
     }
 }

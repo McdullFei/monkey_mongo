@@ -7,6 +7,7 @@
     <context:property-placeholder ignore-resource-not-found="true"
                                   location="classpath*:/*.properties"/>
 
+    <bean id="morphia" class="org.mongodb.morphia.Morphia"/>
 
     <bean id = "mongoConfig" class="com.monkey.core.MongoConfig" >
         <property name="server" value="${mongo.server}"></property>
@@ -14,10 +15,11 @@
         <property name="username" value="${mongo.username}"></property>
         <property name="password" value="${mongo.password}"></property>
         <property name="maxPoolSize" value="${mongo.maxpoolsize}"></property>
+        <property name="instPath" value="com.mindasset.gaia.biz.dao"></property>
     </bean>
     <bean id = "mongoMananger" class="com.monkey.core.MongoManager" >
         <constructor-arg ref="mongoConfig"></constructor-arg>
+        <constructor-arg ref="morphia"></constructor-arg>
     </bean>
-
 
 </beans>

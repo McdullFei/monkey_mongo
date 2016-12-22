@@ -36,6 +36,8 @@ public class MongoConfig {
     private Integer localThresholdms;
     private Integer heartBeatFrequencyms;
 
+    private String instPath;
+
     public String getBuildUri(){
         StringBuilder uri = new StringBuilder(PREFIX).append(username).append(COLON).append(password)
                 .append(AT).append(server).append(SLASH).append(database).append(QUE).append("maxpoolsize=").append(maxPoolSize);
@@ -89,6 +91,14 @@ public class MongoConfig {
 
     public String getDatabase() {
         return database;
+    }
+
+    public String getInstPath() {
+        return instPath;
+    }
+
+    public void setInstPath(String instPath) {
+        this.instPath = instPath;
     }
 
     public void setServer(String server) {
