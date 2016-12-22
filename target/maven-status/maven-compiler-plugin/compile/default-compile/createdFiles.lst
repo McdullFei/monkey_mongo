@@ -1,6 +1,7 @@
 com/monkey/utils/CamelCaseFilter.class
 com/monkey/utils/ObjectIdsValidator.class
 com/monkey/utils/ObjectIdValidator.class
+com/monkey/converters/DefaultDateConverter.class
 com/monkey/serializer/ObjectIdDeSerializer.class
 com/monkey/serializer/ObjectIdSerializer.class
 com/monkey/utils/EmptyUtil.class

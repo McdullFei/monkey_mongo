@@ -3,6 +3,7 @@ package com.monkey.core;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
+import com.monkey.converters.DefaultDateConverter;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class MongoManager {
         this.client = new MongoClient(uri);
         this.config = config;
         morphia.mapPackage(config.getInstPath());//注解扫描路径
+        morphia.getMapper().getConverters().addConverter(DefaultDateConverter.class);
         this.datastore = morphia.createDatastore(client, config.getDatabase());
     }
 
