@@ -13,23 +13,15 @@ import com.monkey.serializer.ObjectIdSerializer;
 import org.apache.log4j.Logger;
 import org.bson.Document;
 import org.bson.types.ObjectId;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.lang.reflect.Method;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
-import java.util.stream.Collectors;
-
 
 /**
  * Created by monkey
@@ -105,8 +97,9 @@ public class BeanUtil {
      * parse a BasicDBList to a List Object
      * clazz :
      * the List object's class type
-     *
+     * <p>
      * 使用jdk8 暂时先不用
+     *
      * @since jdk 1.8
      */
     @Deprecated
@@ -149,6 +142,7 @@ public class BeanUtil {
 
     /**
      * document to a bean
+     *
      * @param document
      * @param clazz
      * @param <T>
@@ -210,6 +204,7 @@ public class BeanUtil {
 
     /**
      * bean to mongo document
+     *
      * @param bean
      * @return
      */
@@ -230,6 +225,7 @@ public class BeanUtil {
 
     /**
      * bean to mongo DBObject
+     *
      * @param bean
      * @return
      */
