@@ -7,6 +7,7 @@ com/monkey/serializer/ObjectIdSerializer.class
 com/monkey/utils/EmptyUtil.class
 com/monkey/core/MongoDao.class
 com/monkey/core/AbstractMongoDao.class
+com/monkey/converters/DefaultBigdecimalConverter.class
 com/monkey/utils/BeanUtil.class
 com/monkey/annotation/MongoId.class
 com/monkey/core/MongoConfig.class

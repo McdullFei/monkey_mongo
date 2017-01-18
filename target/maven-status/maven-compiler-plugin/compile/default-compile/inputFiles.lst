@@ -7,6 +7,7 @@
 /Users/renfei/Mcdullfei_github/monkey_mongo/src/main/java/com/monkey/utils/ObjectIdValidator.java
 /Users/renfei/Mcdullfei_github/monkey_mongo/src/main/java/com/monkey/converters/DefaultDateConverter.java
 /Users/renfei/Mcdullfei_github/monkey_mongo/src/main/java/com/monkey/serializer/ObjectIdDeSerializer.java
+/Users/renfei/Mcdullfei_github/monkey_mongo/src/main/java/com/monkey/converters/DefaultBigdecimalConverter.java
 /Users/renfei/Mcdullfei_github/monkey_mongo/src/main/java/com/monkey/utils/ObjectIdsValidator.java
 /Users/renfei/Mcdullfei_github/monkey_mongo/src/main/java/com/monkey/core/MongoDao.java
 /Users/renfei/Mcdullfei_github/monkey_mongo/src/main/java/com/monkey/core/MongoConfig.java

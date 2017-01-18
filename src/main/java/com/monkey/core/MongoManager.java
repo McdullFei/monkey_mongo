@@ -3,6 +3,7 @@ package com.monkey.core;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoDatabase;
+import com.monkey.converters.DefaultBigdecimalConverter;
 import com.monkey.converters.DefaultDateConverter;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
@@ -24,7 +25,9 @@ public class MongoManager {
         this.client = new MongoClient(uri);
         this.config = config;
         morphia.mapPackage(config.getInstPath());//注解扫描路径
-        morphia.getMapper().getConverters().addConverter(DefaultDateConverter.class);
+        org.mongodb.morphia.converters.Converters c = morphia.getMapper().getConverters();
+        c.addConverter(DefaultDateConverter.class);
+        c.addConverter(DefaultBigdecimalConverter.class);
         this.datastore = morphia.createDatastore(client, config.getDatabase());
     }
 
